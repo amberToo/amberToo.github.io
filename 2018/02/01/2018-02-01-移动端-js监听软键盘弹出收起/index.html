@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>标签: 人工智能 | PerfXLab</title>
+<title>js-mobile | PerfXLab</title>
 
 
     <link rel="alternate" href="/atom.xml" title="PerfXLab" type="application/atom+xml">
@@ -114,38 +114,91 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <h3> 
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="js-mobile">
+            
+	            js-mobile
+            
+        </h1>
+        <div class="post-meta">
     
-        人工智能 
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
     
     
-</h3>
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/js" title='js'>
+                        js
+                    </a>
+                
+                    <a href="/tags/前端开发" title='前端开发'>
+                        前端开发
+                    </a>
+                
+            
+        </span>
+    </span>
+    
 
-    <article class="post">
+    
         
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title"> 
-                    <a href="/2018/04/16/人工智能2018/">人工智能，2018</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2018年04月16日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    砥砺
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/02/01</span>
+        </span>
+    
+</div>
 
-                
-            </p> 
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="../images/timg4.jpg" alt="Alt text"></p>
+<h3 id="“H5页面显示兼容android之软件盘弹起”"><a href="#“H5页面显示兼容android之软件盘弹起”" class="headerlink" title="“H5页面显示兼容android之软件盘弹起”"></a>“H5页面显示兼容android之软件盘弹起”</h3><blockquote>
+<p>做H5表单的时，input focus后键盘弹起，在android中，如footer有fixed，会被顶到键盘上，遮挡表单，，以下是我的解决方案，已经测试过了，作为记录。（在需求讨论时，不建议出现类似布局）</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//弹出软键盘时：</span></span><br><span class="line"><span class="comment">//ios端$('body').scrollTop()会改变</span></span><br><span class="line"><span class="comment">//android端$(window).height()会改变</span></span><br><span class="line"><span class="keyword">var</span> winHeight = $(<span class="built_in">window</span>).height();   <span class="comment">//获取当前页面高度</span></span><br><span class="line">$(<span class="built_in">window</span>).resize(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//IOS 没有此事件</span></span><br><span class="line">   <span class="keyword">var</span> _thisHeight=$(<span class="keyword">this</span>).height();</span><br><span class="line">    <span class="keyword">if</span>(winHeight - thisHeight &gt;<span class="number">50</span>)&#123;</span><br><span class="line">         <span class="comment">//软键盘弹起</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//软键盘收起</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>H5页面布局中，会用到的系统检测代码</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//判断android系统 </span></span><br><span class="line">    <span class="keyword">var</span> u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line">    <span class="keyword">var</span> isAndroid = u.indexOf(<span class="string">'Android'</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">'Linux'</span>) &gt; <span class="number">-1</span>; <span class="comment">//g</span></span><br><span class="line">    <span class="keyword">var</span> isIOS = !!u.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>); <span class="comment">//ios终端</span></span><br><span class="line">    <span class="keyword">if</span> (isAndroid) &#123;</span><br><span class="line">        <span class="comment">// 代码段</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">if</span> (isIOS) &#123;</span><br><span class="line">        <span class="comment">// 代码段</span></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">PerfXLab</a>
+            
         </div>
-    </article>
- 
+        <div>
+            
+        </div>
+    </div>
+</article>
 
-
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/04/13/2018-04-13-管理Git生成多个ssh key/" class="pre-post btn btn-default" title='git'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">git</span>
+        </a>
+    
+    
+</div>
 
 
 
